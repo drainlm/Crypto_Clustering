@@ -1,5 +1,4 @@
-
-# CryptoClustering
+CryptoClustering
 
 Using K-means and Principal Component Analysis (PCA), this script performs clustering anaylsis on cryptocurrency market data (crypto_market_data.csv) in an effort to predict if cryptocurrencies are affected by 24 hour or 7 day price changes.
 
@@ -15,15 +14,15 @@ Using K-means and Principal Component Analysis (PCA), this script performs clust
 
 Below is an overview of our original data.
 
-![1683253600616](image/README/1683253600616.png)
+`<png>`
 
-![1683252732853](image/README/1683252732853.png)
+`<png>`
 
 ### **Prepare the Data**
 
 Using StandardScaler()) module, the data is normalized and a DataFrame is created with the scaled data.
 
-![1683253627734](image/README/1683253627734.png)
+`<png>`
 
 ### Find the Best Value for k Using the Original Data.
 
@@ -42,29 +41,23 @@ Initizalizing a k-means model with 4 clusters and fitting it to the original sca
 
 `<png>`
 
+### Optimize Clusters with Principal Component Analysis
+
+Performing a PCA and reducing the features to three principal components transforming the scaled data using fit.transform. The explained variance is then calculated to understand the amount of information attributed to each principal component, and the total explained variance is computed as well.
+
+`<png>`
+
+* **Question:** What is the total explained variance of the three principal components?
+  Answer: The total explained variance is 89.5% of the total variance in the dataset.
 
 
-#### Optimize Clusters with Principal Component Analysis
 
-* Using the original scaled DataFrame, perform a PCA and reduce the features to three principal components.
-* Retrieve the explained variance to determine how much
-  information can be attributed to each principal component and then
-  answer the following question in your notebook:
+Find the Best Value for k Using the PCA Data
 
-  * What is the total explained variance of the three principal components?
-* Create a new DataFrame with the PCA data and set the
-  "coin_id" index from the original DataFrame as the index for the new
-  DataFrame.
-
-  * The first five rows of the PCA DataFrame should appear as follows:
-    ![The first five rows of the PCA DataFrame](https://static.bc-edx.com/data/dl-1-2/m19/lms/img/PCA_DataFrame.png)
-
-    #### Find the Best Value for k Using the PCA Data
-
-    Use the elbow method on the PCA data to find the best value for `k` using the following steps:
-
+    Use the elbow method on the PCA data to find the best value for`k` using the following steps:
 
     * Create a list with the number of k-values from 1 to 11.
+
 * Create an empty list to store the inertia values.
 * Create a `for` loop to compute the inertia with each possible value of `k`.
 * Create a dictionary with the data to plot the Elbow curve.
