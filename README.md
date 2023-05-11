@@ -56,6 +56,8 @@ Creating a list of k-values 1-11 and an empty list to store the inertia values, 
 
 ![1683508526646](image/README/1683508526646.png)
 
+* **Question:** What is the best value for `k` when using the PCA data?
+  Answer: k4
 * **Question:** Does it differ from the best k value found using the original data?
   Answer: No
 
